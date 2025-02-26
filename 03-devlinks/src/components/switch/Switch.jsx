@@ -1,12 +1,14 @@
-import styles from "./switch.module.css"
+import styles from "./switch.module.css";
 
-const Switch = () => {
+const Switch = ({ toggle, isLight }) => {
   return (
-  <div id={styles.Switch}>
-    <button></button>
-    <span></span>
-  </div>
-  )
-}
+    <div className={isLight ? styles.light : ""}>
+      <div onClick={toggle} id={styles.switch}>
+        <button></button>
+        <span></span>
+      </div>
+    </div>
+  );
+};
 
-export default Switch
+export default Switch;

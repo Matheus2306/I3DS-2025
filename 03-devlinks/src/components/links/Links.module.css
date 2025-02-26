@@ -1,6 +1,7 @@
 li{
-width: 50%;
+width: 450px;
 }
+
 li a {
     display: flex;
     align-items: center;
@@ -18,10 +19,4 @@ li a:hover{
     background: var(--surface-color-hover);
     border: 1px solid var(--text-color);
 
-}
-
-#linkalign{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

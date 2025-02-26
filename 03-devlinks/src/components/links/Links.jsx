@@ -1,14 +1,12 @@
 import "./Links.module.css";
 import styles  from "./Links.module.css"
-const Links = () => {
+const Links = ({children, link}) => {
   return (
-    <div id={styles.linkalign}>
       <li>
-        <a href="https://google.com" target="_blank">
-          Google
+        <a href={link} target="_blank">
+          {children}
         </a>
       </li>
-    </div>
   );
 };
 

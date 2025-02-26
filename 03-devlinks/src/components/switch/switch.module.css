@@ -1,4 +1,4 @@
-#Switch {
+#switch {
   position: relative;
   width: 64px;
   margin: 4px auto;
@@ -32,7 +32,6 @@
     -webkit-backdrop-filter: blur(4px);
   }
 }
-
 .light #switch button {
   animation: slide-in 0.2s forwards;
 }
