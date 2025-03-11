@@ -1,4 +1,4 @@
-import './Moviecard.css'
+import "./Moviecard.css";
 
 const MovieCard = (props) => {
   return (
@@ -10,7 +10,7 @@ const MovieCard = (props) => {
       <h4>{props.Type}</h4>
       <h3>{props.Title}</h3>
     </div>
-  )
-}
+  );
+};
 
-export default MovieCard
+export default MovieCard;
