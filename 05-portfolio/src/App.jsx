@@ -5,7 +5,10 @@ function App() {
 
   return (
     <>
+    <div id='App'>
+
     <MatrixEfect />
+    </div>
     </>
   )
 }
