@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header/Header";
 import MatrixEfect from "./components/matrixEfect/MatrixEfect";
+import SobreMim from "./components/SobreMim/SobreMim";
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <div id="App">
         <MatrixEfect />
         <Header />
+        <SobreMim/>
       </div>
     </>
   );
