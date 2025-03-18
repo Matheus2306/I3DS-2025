@@ -3,7 +3,6 @@ import Footer from "./components/Footer/Footer";
 import { useEffect, useState } from "react";
 import logo from "./assets/devflix.png";
 import lupa from "./assets/search.svg";
-import MovieCard from "./components/Moviecard/Moviecard";
 
 const App = () => {
   const [search, setsearch] = useState("");
@@ -47,16 +46,7 @@ const App = () => {
         </div>
       </div>
       {/* mapeando o array de "movies" ou seja buscando os dados guardados na API ou array */}
-      {movies?.length > 0 ? (
-        <div className="container">
-          {movies.map((movie, index) => (
-            <MovieCard key={index} apiUrl={apiUrl} {...movie} />
-            // ...movie traz todos os dados guardados no DB ou array
-          ))}
-        </div>
-      ) : (
-        <h2 className="empty">Filme não encontrado</h2>
-      )}
+    
       <Footer
         DEVname="Matheus Felipe Rodrigues"
         DEVLInk="https://github.com/Matheus2306"
