@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Moviedescription from "../Moviedescription/Moviedescription";
-
+import styles from "./MovieCard.module.css";
 const MovieCard = (props) => {
   const [isMdalOpen, setModalOpen] = useState(false);
   const toggleModal = () => {
-    setModalOpen(!isMdalOpen)
+    setModalOpen(!isMdalOpen);
   };
 
   return (
@@ -22,7 +22,11 @@ const MovieCard = (props) => {
         </div>
       </div>
       {isMdalOpen && (
-        <Moviedescription click={toggleModal} apiUrl={props.apiUrl} movieId={props.imdbID} />
+        <Moviedescription
+          click={toggleModal}
+          apiUrl={props.apiUrl}
+          movieId={props.imdbID}
+        />
       )}
     </>
   );
