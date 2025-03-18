@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Moviedescription from "../Moviedescription/Moviedescription";
-import styles from "./Moviecard.module.css";
+import styles from "./MovieCard.module.css";
 
 const MovieCard = (props) => {
   const [isMdalOpen, setModalOpen] = useState(false);
