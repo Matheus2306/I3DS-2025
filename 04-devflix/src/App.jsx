@@ -40,7 +40,7 @@ const App = () => {
           <input
             onKeyDown={handleKeypress}
             onChange={(e) => setsearch(e.target.value)}
-            Type="text"
+            type="text"
             placeholder="Pesquise por filmes"
           />
           <img
@@ -54,7 +54,7 @@ const App = () => {
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie, index) => (
-            <MovieCard key={index} {...movie} />
+            <MovieCard key={index} apiUrl={apiUrl} {...movie} />
             // ...movie traz todos os dados guardados no DB ou array
           ))}
         </div>
