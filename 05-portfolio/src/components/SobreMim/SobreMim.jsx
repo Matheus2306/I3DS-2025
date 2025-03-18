@@ -3,7 +3,7 @@ import style from "./SobreMim.module.css";
 const SobreMim = () => {
   return (
     <div Id="SobreMim" className={`container ${style.sobreMim}`}>
-        <img src="./src/img/20241119_142557.jpg" alt="" />
+      <img src="./src/img/20241119_142557.jpg" alt="" />
       <h4>Matheus Felipe Rodrigues</h4>
       <p>Desenvolvedor FullStack</p>
       <p>
@@ -17,6 +17,10 @@ const SobreMim = () => {
         entregar projetos de qualidade. Se quiser saber mais sobre meu trabalho,
         entre em contato!
       </p>
+      <div className={style.socialLink}>
+        <a href="https://github.com/Matheus2306" target="_blank"></a>
+        <a href=""></a>
+      </div>
     </div>
   );
 };
