@@ -1,3 +1,17 @@
-#App{
-    background: radial-gradient(circle at 50% 50%, #000, #fff );
+#App {
+  background: linear-gradient(to bottom right, #d1d5db, #1f2937, #d1d5db);
+  animation: gradient 5s ease infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

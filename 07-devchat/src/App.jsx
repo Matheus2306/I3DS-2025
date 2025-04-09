@@ -15,7 +15,7 @@ function App() {
       id="App"
       className="m-0 p-0 vh-100 d-flex justify-content-center align-items-center text-light"
     >
-      {chatvisible ? <Chat socket={socket} /> : <Join setSocket={setSocket} visibility={setcontrol} />}
+      {chatvisible ? <Chat socket={socket} setSocket={setSocket} visibility={setcontrol}/> : <Join setSocket={setSocket} visibility={setcontrol} />}
     </div>
   );
 }

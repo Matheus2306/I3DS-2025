@@ -13,7 +13,7 @@ const Join = (props) => {
     }
 
     //Criando a conexão com o socket
-    const servidorSocket = await io.connect("http://192.168.10.123:3001");
+    const servidorSocket = await io.connect("ws://192.168.0.122:5000");
     servidorSocket.emit("set_username", userName);
     //abrindo a pagina de chat
     props.setSocket(servidorSocket);
@@ -21,29 +21,41 @@ const Join = (props) => {
   };
 
   return (
-    <div className="text-center">
-      <h1>devChat</h1>
-      <div className="p-4 d-flex rounded flex-column justify-content-center align-items-center bg-dark">
-        <h3>Bem-vindo ao devChat!</h3>
-        <input
-          ref={userNameRef}
-          className=" bg-dark border-0 border-bottom bg-transparent text-light"
-          type="text"
-          id="message-input"
-          placeholder="Nome"
-          style={{ height: "38px" }}
-          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-        />
-        <button
-          className="btn mt-1 btn-dark rounded-2"
-          id="send-button"
-          onClick={() => {
-            handleSubmit();
-          }}
-          style={{ width: "200px" }}
-        >
-          Entrar
-        </button>
+    <div className="login-bg d-flex justify-content-center align-items-center min-vh-100">
+      <div
+        className="card p-4 shadow-lg"
+        style={{
+          width: "400px",
+          height: "300px",
+          borderRadius: "20px",
+          backgroundColor: "#212529",
+        }}
+      >
+        <h1 className="text-center mb-3 fw-bold text-light">devChat</h1>
+        <h5 className="text-center mb-4 text-light">Bem-vindo ao devChat!</h5>
+        <form action="">
+          <div className="mb-3 d-flex">
+            <input
+              ref={userNameRef}
+              className=" form-control bg-dark-subtle text-white border-spacing-0"
+              type="text"
+              id="message-input"
+              placeholder="Nome"
+              style={{ height: "38px" }}
+              onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+            />
+          </div>
+          <button
+            className="btn btn-primary w-100"
+            id="send-button"
+            onClick={() => {
+              handleSubmit();
+            }}
+            style={{ width: "200px" }}
+          >
+            Entrar
+          </button>
+        </form>
       </div>
     </div>
   );

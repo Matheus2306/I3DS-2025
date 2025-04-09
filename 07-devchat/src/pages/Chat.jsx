@@ -13,7 +13,7 @@ const Chat = (props) => {
   }, [props.socket]);
 
   useEffect(() => {
-  bottomRef.current.scrollIntoView({
+    bottomRef.current.scrollIntoView({
       behavior: "smooth",
       block: "end",
     });
@@ -23,53 +23,54 @@ const Chat = (props) => {
     const message = messageRef.current.value;
     if (!message.trim()) return;
 
-    props.socket.emit("message", message)
-
+    props.socket.emit("message", message);
     messageRef.current.value = "";
     messageRef.current.focus();
   };
 
   return (
-    <div
-      id="chat-container"
-      style={{ width: "400px", height: "600px" }}
-      className="bg-secondary rounded-4 p-3 d-flex flex-column m-4"
-    >
+    <div className="d-flex justify-content-center align-items-center min-vh-100">
       <div
-        id="chat-body"
-        className="overflow-y-hidden h-100 d-flex flex-column gap-3"
+        id="chat-container"
+        className="chat-box bg-opacity-100 rounded-4 p-3 d-flex flex-column shadow-lg bg-secundary"
+        style={{ width: "400px", height: "600px",}}
       >
-        {messageList.map((message, index) => (
-          <div
-            className={`${message.authorId === props.socket.id ?"align-self-end bg-black text-light":"align-self-start bg-white text-dark "} rounded-3 p-2`}
-            key={index}
-          >
-            <div className="fw-bold" id="message-author">
-              {message.author}
-            </div>
-            <div id="message-text">{message.text}</div>
-          </div>
-        ))}
-        <div ref={bottomRef}/>{/**/}
-        </div>
-      <div id="chat-footer" className="input-group">
-        <input
-          ref={messageRef}
-          id="msgUser"
-          name="msgUser"
-          type="text"
-          className="form-control"
-          placeholder="Digite sua mensagem..."
-          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-        />
-        <button
-          id="send-button"
-          className="btn btn-light m-0 input-group-text"
-          type="button"
-          onClick={(e) => handleSubmit()}
+        <div
+          id="chat-body"
+          className="flex-grow-1 overflow-auto mb-2 d-flex flex-column gap-2 pe-1"
         >
-          <i className="bi bi-send-fill"></i>
-        </button>
+          {messageList.map((message, index) => (
+            <div
+              key={index}
+              className={`${
+                message.authorId === props.socket.id
+                  ? "align-self-end bg-dark text-light"
+                  : "align-self-start bg-light text-dark"
+              } rounded-3 px-3 py-2 shadow-sm`}
+            >
+              <div className="fw-bold small">{message.author}</div>
+              <div>{message.text}</div>
+            </div>
+          ))}
+          <div ref={bottomRef} />
+        </div>
+
+        <div id="chat-footer" className="input-group">
+          <input
+            ref={messageRef}
+            type="text"
+            className="form-control border-0"
+            placeholder="Digite sua mensagem..."
+            onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+          />
+          <button
+            className="btn btn-outline-light"
+            type="button"
+            onClick={handleSubmit}
+          >
+            <i className="bi bi-send-fill"></i>
+          </button>
+        </div>
       </div>
     </div>
   );
